@@ -6,7 +6,7 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // Conecta a la base de datos  con usuario, contraseña y nombre de la BD
-$servidor = "localhost"; $usuario = "root"; $contrasenia = "982109821"; $nombreBaseDatos = "crud-angular";
+$servidor = "localhost"; $usuario = "root"; $contrasenia = ""; $nombreBaseDatos = "empleados";
 $conexionBD = new mysqli($servidor, $usuario, $contrasenia, $nombreBaseDatos);
 
 
@@ -35,7 +35,7 @@ if(isset($_GET["insertar"])){
     $nombre=$data->nombre;
     $correo=$data->correo;
         if(($correo!="")&&($nombre!="")){
-            
+
     $sqlEmpleaados = mysqli_query($conexionBD,"INSERT INTO empleados(nombre,correo) VALUES('$nombre','$correo') ");
     echo json_encode(["success"=>1]);
         }
@@ -43,13 +43,13 @@ if(isset($_GET["insertar"])){
 }
 // Actualiza datos pero recepciona datos de nombre, correo y una clave para realizar la actualización
 if(isset($_GET["actualizar"])){
-    
+
     $data = json_decode(file_get_contents("php://input"));
 
     $id=(isset($data->id))?$data->id:$_GET["actualizar"];
     $nombre=$data->nombre;
     $correo=$data->correo;
-    
+
     $sqlEmpleaados = mysqli_query($conexionBD,"UPDATE empleados SET nombre='$nombre',correo='$correo' WHERE id='$id'");
     echo json_encode(["success"=>1]);
     exit();
@@ -64,4 +64,3 @@ else{ echo json_encode([["success"=>0]]); }
 
 
 ?>
-
