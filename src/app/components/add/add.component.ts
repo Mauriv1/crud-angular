@@ -7,11 +7,10 @@ import {FormGroup, FormBuilder} from '@angular/forms';
   styleUrls: ['./add.component.scss'],
 })
 export class AddComponent implements OnInit {
-  formularioRegistro!: FormGroup;
+  formularioRegistro:FormGroup;
 
   constructor(public formulario:FormBuilder) {
-    this.formularioRegistro;
-    formulario.group({
+    this.formularioRegistro = this.formulario.group({
       descripcion: [''],
       codigo:['']
     });
