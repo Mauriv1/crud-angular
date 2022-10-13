@@ -1,2 +1,25 @@
 Contenido
-<p>add works!</p>
+<div class="card">
+    <div class="card-header">
+        Agregar Registro
+    </div>
+    <div class="card-body">
+        <form [formGroup]="formularioRegistro" (ngSubmit)="enviarDatos()">
+            <div class="mb-3">
+              <label for="" class="form-label">Registro</label>
+              <input type="text"
+                class="form-control" name="" formControlName="descripcion" id="" aria-describedby="helpId" placeholder="Escribe registro">
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label">Codigo</label>
+                <input type="text"
+                  class="form-control" name="" formControlName="codigo" id="" aria-describedby="helpId" placeholder="Escribe codigo">
+              </div>
+              <div class="btn-group" role="group" aria-label="Button group name">
+                <button type="submit" class="btn btn-success">Agregar</button>
+                <button type="button" class="btn btn-primary">Cancelar</button>
+              </div>
+        </form>
+    </div>
+</div>
+

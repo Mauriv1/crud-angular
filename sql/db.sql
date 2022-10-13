@@ -18,36 +18,36 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `empleados`
+-- Base de datos: `crudAngular`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empleados`
+-- Estructura de tabla para la tabla `crudAngular`
 --
 
-CREATE TABLE `empleados` (
+CREATE TABLE `crudAngular` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(255) NOT NULL,
-  `correo` varchar(255) NOT NULL
+  `descripcion` varchar(255) ,
+  `codigo` varchar(255) 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `empleados`
+-- Volcado de datos para la tabla `crudAngular`
 --
 
-INSERT INTO `empleados` (`id`, `nombre`, `correo`) VALUES
-(65, 'Oscar', 'oscaruh@develoteca.com');
+INSERT INTO `crudAngular` (`id`, `descripcion`, `codigo`) VALUES
+(' ', 'Registro', 'codigo');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `empleados`
+-- Indices de la tabla `crudAngular`
 --
-ALTER TABLE `empleados`
+ALTER TABLE `crudAngular`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -55,9 +55,9 @@ ALTER TABLE `empleados`
 --
 
 --
--- AUTO_INCREMENT de la tabla `empleados`
+-- AUTO_INCREMENT de la tabla `crudAngular`
 --
-ALTER TABLE `empleados`
+ALTER TABLE `crudAngular`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 COMMIT;
 
